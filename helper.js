@@ -26,7 +26,7 @@ function wrap_icon(descriptor) {
 	} else {
 		fn = descriptor.join('_');
 	}
-	img.setAttribute('src', `page-icons/${fn}.png`);
+	img.setAttribute('src', `icon/page/${fn}.png`);
 	
 	let title = undefined;
 	let subtitle = undefined;
@@ -623,7 +623,7 @@ function get_next_level() {
 	
 	if (current_depth == 29) {
 		document.getElementById('rotation-timer').innerText = '\u2012\u2012:\u2012\u2012 to';
-		document.getElementById('timer-img').setAttribute('src', 'page-icons/unknown.png');
+		document.getElementById('timer-img').setAttribute('src', 'icon/page/unknown.png');
 		document.getElementById('next-level-name').innerHTML = '<p>---</p>';
 		return;
 	}
@@ -735,7 +735,7 @@ function get_next_level() {
 	
 	if (selected_levels[current_depth+1] == -1) {
 		document.getElementById('rotation-timer').innerText = '\u2012\u2012:\u2012\u2012 to';
-		document.getElementById('timer-img').setAttribute('src', 'page-icons/unknown.png');
+		document.getElementById('timer-img').setAttribute('src', 'icon/page/unknown.png');
 		document.getElementById('next-level-name').innerHTML = '<p>---</p>';
 	} else if (rot_data[current_depth+1].n > 1) {
 		// CSS selector magic to get the right level icon

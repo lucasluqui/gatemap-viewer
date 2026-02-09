@@ -27,7 +27,7 @@ function format_date(s) {
 function fetch_gate_data() {
 	let current_gate = gates[current_gate_index];
 	let fn = current_gate.join('_');
-	fetch('gates/' + fn + '.txt')
+	fetch('gate/data/' + fn + '.txt')
 		.then(response => response.text())
 		.then(text => populate(text));
 }
@@ -48,7 +48,7 @@ function populate_gates(text) {
 	div.setAttribute('class', 'entry');
 	let img = document.createElement('img');
 	img.setAttribute('draggable', 'false');
-	img.setAttribute('src', 'page-icons/unknown.png');
+	img.setAttribute('src', 'icon/page/unknown.png');
 	let name_div = document.createElement('div');
 	name_div.setAttribute('class', 'name-date');
 	let p = document.createElement('p');
@@ -76,7 +76,7 @@ function populate_gates(text) {
 		}
 		let img = document.createElement('img');
 		img.setAttribute('draggable', 'false');
-		img.setAttribute('src', 'page-icons/' + icon + '.png');
+		img.setAttribute('src', 'icon/page/' + icon + '.png');
 		let name_div = document.createElement('div');
 		name_div.setAttribute('class', 'name-date');
 		let p = document.createElement('p');
@@ -126,14 +126,14 @@ function populate(text) {
 	} else {
 		rot_data = null;
 		document.getElementById('rotation-timer').innerText = '\u2012\u2012:\u2012\u2012 to';
-		document.getElementById('timer-img').setAttribute('src', 'page-icons/unknown.png');
+		document.getElementById('timer-img').setAttribute('src', 'icon/page/unknown.png');
 		document.getElementById('next-level-name').innerHTML = '<p>---</p>';
 		draw_lines(true);
 	}
 	
 	// fill in the levels
 	let spacer = null;
-	document.getElementById('gate-img').setAttribute('src', `page-icons/${icon_name}.png`);
+	document.getElementById('gate-img').setAttribute('src', `icon/page/${icon_name}.png`);
 	document.getElementById('gate-name').innerHTML = gatename + ' Gate';
 	document.getElementById('gate-date').innerHTML = format_date(current_gate[0]);
 	let parent = document.getElementById('depth-container');
@@ -213,7 +213,7 @@ function populate(text) {
 			let icon = document.createElement('img');
 			icon.setAttribute('class', 'stratum-icon');
 			icon.setAttribute('alt', data_chunk.themes[i]);
-			icon.setAttribute('src', `theme-icons/${data_chunk.themes[i].toLowerCase()}.png`);
+			icon.setAttribute('src', `icon/theme/${data_chunk.themes[i].toLowerCase()}.png`);
 			container.children[i].appendChild(icon);
 		}
 		let text = document.createElement('span');
@@ -325,7 +325,7 @@ function init() {
 		tick.setAttribute('src', 'hashmarks.png');
 		tick_container.appendChild(tick);
 	}
-	fetch('gates/gate_list.txt')
+	fetch('gate/gate_list.txt')
 		.then(response => response.text())
 		.then(text => populate_gates(text));
 	window.addEventListener('scroll', section_track_func);
