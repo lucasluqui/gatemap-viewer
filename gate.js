@@ -27,7 +27,7 @@ function format_date(s) {
 function fetch_gate_data() {
 	let current_gate = gates[current_gate_index];
 	let fn = current_gate.join('_');
-	fetch('gate/data/' + fn + '.txt')
+	fetch('/gate/data/' + fn + '.txt')
 		.then(response => response.text())
 		.then(text => populate(text));
 }
@@ -325,7 +325,7 @@ function init() {
 		tick.setAttribute('src', 'image/hashmarks.png');
 		tick_container.appendChild(tick);
 	}
-	fetch('gate/gate_list.txt')
+	fetch('/gate/gate_list.txt')
 		.then(response => response.text())
 		.then(text => populate_gates(text));
 	window.addEventListener('scroll', section_track_func);
