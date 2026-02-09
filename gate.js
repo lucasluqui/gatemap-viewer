@@ -81,7 +81,7 @@ function populate_gates(text) {
 		name_div.setAttribute('class', 'name-date');
 		let p = document.createElement('p');
 		p.setAttribute('class', 'text-title');
-		p.innerHTML = to_gatename(e) + ' Gate';
+		p.innerHTML = to_gatename(e);
 		name_div.appendChild(p);
 		p = document.createElement('p');
 		p.setAttribute('class', 'text-title no-bold');

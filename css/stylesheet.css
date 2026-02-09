@@ -136,7 +136,7 @@ div {
     justify-content: space-evenly;
 }
 .text-title {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     font-weight: bold;
     font-style: oblique;
 }
@@ -229,7 +229,7 @@ div {
     border-radius: 0 0 0 8px;
 }
 .no-bold {
-    font-family: Ubuntu, sans-serif;
+    font-family: 'Arial', sans-serif;
     font-weight: normal;
 }
 .tick-container {
