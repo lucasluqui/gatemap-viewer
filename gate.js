@@ -134,7 +134,7 @@ function populate(text) {
 	// fill in the levels
 	let spacer = null;
 	document.getElementById('gate-img').setAttribute('src', `image/icon/page/${icon_name}.png`);
-	document.getElementById('gate-name').innerHTML = gatename + ' Gate';
+	document.getElementById('gate-name').innerHTML = gatename;
 	document.getElementById('gate-date').innerHTML = format_date(current_gate[0]);
 	let parent = document.getElementById('depth-container');
 	parent.innerHTML = '';
