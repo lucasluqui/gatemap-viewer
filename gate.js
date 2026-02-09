@@ -48,7 +48,7 @@ function populate_gates(text) {
 	div.setAttribute('class', 'entry');
 	let img = document.createElement('img');
 	img.setAttribute('draggable', 'false');
-	img.setAttribute('src', 'icon/page/unknown.png');
+	img.setAttribute('src', 'image/icon/page/unknown.png');
 	let name_div = document.createElement('div');
 	name_div.setAttribute('class', 'name-date');
 	let p = document.createElement('p');
@@ -76,7 +76,7 @@ function populate_gates(text) {
 		}
 		let img = document.createElement('img');
 		img.setAttribute('draggable', 'false');
-		img.setAttribute('src', 'icon/page/' + icon + '.png');
+		img.setAttribute('src', 'image/icon/page/' + icon + '.png');
 		let name_div = document.createElement('div');
 		name_div.setAttribute('class', 'name-date');
 		let p = document.createElement('p');
@@ -126,14 +126,14 @@ function populate(text) {
 	} else {
 		rot_data = null;
 		document.getElementById('rotation-timer').innerText = '\u2012\u2012:\u2012\u2012 to';
-		document.getElementById('timer-img').setAttribute('src', 'icon/page/unknown.png');
+		document.getElementById('timer-img').setAttribute('src', 'image/icon/page/unknown.png');
 		document.getElementById('next-level-name').innerHTML = '<p>---</p>';
 		draw_lines(true);
 	}
 	
 	// fill in the levels
 	let spacer = null;
-	document.getElementById('gate-img').setAttribute('src', `icon/page/${icon_name}.png`);
+	document.getElementById('gate-img').setAttribute('src', `image/icon/page/${icon_name}.png`);
 	document.getElementById('gate-name').innerHTML = gatename + ' Gate';
 	document.getElementById('gate-date').innerHTML = format_date(current_gate[0]);
 	let parent = document.getElementById('depth-container');
@@ -164,7 +164,7 @@ function populate(text) {
 			if (depth_data.length > 2) {
 				spacer = document.createElement('img');
 				spacer.setAttribute('draggable', 'false');
-				spacer.setAttribute('src', `spacer_${direction}.png`);
+				spacer.setAttribute('src', `image/spacer_${direction}.png`);
 				container.appendChild(spacer);
 			}
 			for (let i=1; i<depth_data.length; i++) {
@@ -172,7 +172,7 @@ function populate(text) {
 				if (depth_data.length > 2) {
 					spacer = document.createElement('img');
 					spacer.setAttribute('draggable', 'false');
-					spacer.setAttribute('src', `spacer_${direction}.png`);
+					spacer.setAttribute('src', `image/spacer_${direction}.png`);
 					container.appendChild(spacer);
 				}
 			}
@@ -213,7 +213,7 @@ function populate(text) {
 			let icon = document.createElement('img');
 			icon.setAttribute('class', 'stratum-icon');
 			icon.setAttribute('alt', data_chunk.themes[i]);
-			icon.setAttribute('src', `icon/theme/${data_chunk.themes[i].toLowerCase()}.png`);
+			icon.setAttribute('src', `image/icon/theme/${data_chunk.themes[i].toLowerCase()}.png`);
 			container.children[i].appendChild(icon);
 		}
 		let text = document.createElement('span');
@@ -322,7 +322,7 @@ function init() {
 	for (let i=0; i<32; i++) {
 		let tick = document.createElement('img');
 		tick.setAttribute('draggable', 'false');
-		tick.setAttribute('src', 'hashmarks.png');
+		tick.setAttribute('src', 'image/hashmarks.png');
 		tick_container.appendChild(tick);
 	}
 	fetch('gate/gate_list.txt')

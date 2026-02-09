@@ -10,7 +10,7 @@
 		<title>Gate Map Viewer</title>
 		<link rel="stylesheet" href="stylesheet.css" />
 		<link href="https://fonts.googleapis.com/css?family=Lato|Ubuntu" rel="stylesheet" />
-		<link rel="shortcut icon" href="icon/page/terminal.png">
+		<link rel="shortcut icon" href="image/icon/page/terminal.png">
 		<script src="gate.js"></script>
 		<script src="helper.js"></script>
 		<script src="https://momentjs.com/downloads/moment.js"></script>
@@ -19,7 +19,7 @@
 		<meta name="twitter:title" content="Gate Map Viewer" />
 		<meta name="twitter:creator" content="@fluffderg">
 		<meta name="twitter:description" content="Tool to view current and previous arcade gates in Spiral Knights." />
-		<meta name="twitter:image" content="https://silverhawke.xyz/gatemap-viewer/card-image.png" />
+		<meta name="twitter:image" content="image/card-image.png" />
 	</head>
 	<body onload="init();">
 		<p class="fork-notice">
@@ -30,13 +30,13 @@
 		<div class="sidebar text-title">
 			<div class="navigator">
 				<div class="navbar-container">
-					<img alt="Previous gate" class="animate" id="prev" draggable=false src="spacer_left.png">
+					<img alt="Previous gate" class="animate" id="prev" draggable=false src="image/spacer_left.png">
 					<div class="current-gate">
-						<img alt="Current gate icon" id="gate-img" draggable="false" src="icon/page/unknown.png">
+						<img alt="Current gate icon" id="gate-img" draggable="false" src="image/icon/page/unknown.png">
 						<p id="gate-name" class="text-title">---</p>
 						<p class="text-title no-bold" id="gate-date">-</p>
 					</div>
-					<img alt="Next gate" class="animate" id="next" draggable=false src="spacer_right.png">
+					<img alt="Next gate" class="animate" id="next" draggable=false src="image/spacer_right.png">
 				</div>
 				<div class="separator"></div>
 			</div>
@@ -45,7 +45,7 @@
 		</div>
 		<div class="middle">
 			<div class="bgcontainer">
-				<img alt="Background" draggable=false src="background.png">
+				<img alt="Background" draggable=false src="image/background.png">
 			</div>
 			<div class="line-container" id="line-container"></div>
 			<div class="depth-container" id="depth-container"></div>
@@ -60,7 +60,7 @@
 				<p>30</p>
 			</div>
 			<div class="timer-container" id="timer-container" style="display: none;">
-				<p id="rotation-timer">‒‒:‒‒ to</p><img draggable="false" id="timer-img" src="icon/page/unknown.png"><div id="next-level-name"><p>---</p></div>
+				<p id="rotation-timer">‒‒:‒‒ to</p><img draggable="false" id="timer-img" src="image/icon/page/unknown.png"><div id="next-level-name"><p>---</p></div>
 			</div>
 		</div>
 		<div id="section-jump" class="section-jump">
