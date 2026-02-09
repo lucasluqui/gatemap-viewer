@@ -3,7 +3,7 @@
     padding: 0;
     border: 0;
     font-size: 9pt;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Arial', sans-serif;
     vertical-align: baseline;
 }
 :root {
@@ -136,7 +136,7 @@ div {
     justify-content: space-evenly;
 }
 .text-title {
-    font-family: Lato, sans-serif;
+    font-family: Arial, sans-serif;
     font-weight: bold;
     font-style: oblique;
 }
