@@ -100,34 +100,34 @@ div {
     width: 100%;
     background-image: linear-gradient(to right, var(--color-body-bg), var(--color-white), var(--color-body-bg));
 }
-#entry-wrapper {
+#gate-entry-wrapper {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
 }
-.entry {
+.gate-entry {
     width: 100%;
     display: flex;
     height: 55px;
     margin: 0 20px;
     padding: 7px 0;
 }
-.entry:hover {
+.gate-entry:hover {
     background-image: linear-gradient(to right, var(--color-body-bg), var(--color-hover-bg), var(--color-body-bg));
 }
-.entry img {
+.gate-entry img {
     width: 55px;
 }
-.entry img, img.animate {
+.gate-entry img, img.animate {
     opacity: 0.5;
 }
-.entry:hover img, img.animate:hover {
+.gate-entry:hover img, img.animate:hover {
     opacity: 1;
 }
 .no-anim {
     opacity: 1;
 }
-.entry .name-date {
+.gate-entry .name-date {
     display: inline-flex;
     flex-direction: column;
     flex-grow: 100;

@@ -45,7 +45,7 @@ function populate_gates(text) {
 	next_gate_time = moment.tz(format_date(latest_gate[0]) + ' 20:00', 'America/Chicago').add(1, 'days').valueOf();
 
 	let div = document.createElement('div');
-	div.setAttribute('class', 'entry');
+	div.setAttribute('class', 'gate-entry');
 	let img = document.createElement('img');
 	img.setAttribute('draggable', 'false');
 	img.setAttribute('src', 'image/icon/page/unknown.png');
@@ -62,17 +62,17 @@ function populate_gates(text) {
 	name_div.appendChild(p);
 	div.appendChild(img);
 	div.appendChild(name_div);
-	document.getElementById('entry-wrapper').appendChild(div);
+	document.getElementById('gate-entry-wrapper').appendChild(div);
 
 	for (let i=gates.length-1; i>=0; i--) {
 		let e = gates[i];
 		let div = document.createElement('div');
 		let icon = e.slice(1).join('_');
-		div.setAttribute('class', 'entry');
+		div.setAttribute('class', 'gate-entry');
 		div.setAttribute('data-value', i.toString());
 		div.addEventListener('click', gate_jump);
 		if ((gates.length - i) % 2 !== 0) {
-			div.setAttribute('class', 'entry dark-bg');
+			div.setAttribute('class', 'gate-entry dark-bg');
 		}
 		let img = document.createElement('img');
 		img.setAttribute('draggable', 'false');
@@ -306,13 +306,13 @@ function gate_jump() {
 }
 
 function remove_style() {
-	document.querySelector(`div.entry[data-value="${current_gate_index}"]`).classList.remove('light-bg');
-	document.querySelector(`div.entry[data-value="${current_gate_index}"]>img`).removeAttribute('style');
+	document.querySelector(`div.gate-entry[data-value="${current_gate_index}"]`).classList.remove('light-bg');
+	document.querySelector(`div.gate-entry[data-value="${current_gate_index}"]>img`).removeAttribute('style');
 }
 
 function add_style() {
-	document.querySelector(`div.entry[data-value="${current_gate_index}"]`).classList.add('light-bg');
-	document.querySelector(`div.entry[data-value="${current_gate_index}"]>img`).setAttribute('style', 'opacity: 1');
+	document.querySelector(`div.gate-entry[data-value="${current_gate_index}"]`).classList.add('light-bg');
+	document.querySelector(`div.gate-entry[data-value="${current_gate_index}"]>img`).setAttribute('style', 'opacity: 1');
 }
 
 // function to run when the page loads
