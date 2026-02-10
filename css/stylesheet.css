@@ -500,10 +500,14 @@ a:hover {
 .clickable-arrow:hover {
     cursor: pointer;
 }
-.gate-show-old-wrapper {
-    margin-top: 50px;
+.gate-old-wrapper {
+    position: sticky;
+    bottom: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
     width: 100%;
     align-content: center;
+    background-color: var(--color-body-bg);
 }
 .gate-entry-hidden {
     display: none;

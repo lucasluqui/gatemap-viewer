@@ -75,6 +75,7 @@ function populate_gates(text) {
 			div.classList.add('dark-bg')
 		}
 		if (gates.length - i > 4) {
+			div.classList.add('gate-entry-old');
 			div.classList.add('gate-entry-hidden');
 		}
 		let img = document.createElement('img');
@@ -388,13 +389,22 @@ function init() {
 		}
 	}
 
-	showOldButton = document.getElementById("button-gate-show-old")
-	showOldButton.addEventListener('click', function() {
+	oldGatesButton = document.getElementById("button-gate-old")
+	oldGatesButton.addEventListener('click', function() {
+		let oldGates = document.querySelectorAll('.gate-entry-old');
 		let hiddenGates = document.querySelectorAll('.gate-entry-hidden');
-			for (let i=0; i < hiddenGates.length; i++) {
-				hiddenGates[i].classList.remove('gate-entry-hidden');
+		if (oldGates.length == hiddenGates.length) {
+			for (let i=0; i < oldGates.length; i++) {
+				oldGates[i].classList.remove('gate-entry-hidden');
+			}	
+			this.innerText = "Hide Old Gates"
+		} else {
+			for (let i=0; i < oldGates.length; i++) {
+				oldGates[i].classList.add('gate-entry-hidden');
 			}
-		this.remove();
+			this.innerText = "Show Old Gates"
+		}
+		//this.remove();
 	});
 
 	closeNoticeButton = document.getElementById("button-close-notice")
