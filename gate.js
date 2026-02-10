@@ -68,16 +68,17 @@ function populate_gates(text) {
 		let e = gates[i];
 		let div = document.createElement('div');
 		let icon = e.slice(1).join('_');
-		if (i <= 4) {
-			div.setAttribute('class', 'gate-entry');
-		} else {
-			// hide old gates
-			div.setAttribute('class', 'gate-entry gate-entry-hidden');
-		}
+		let darkBg = false;
+		div.setAttribute('class', 'gate-entry');
 		div.setAttribute('data-value', i.toString());
 		div.addEventListener('click', gate_jump);
 		if ((gates.length - i) % 2 !== 0) {
-			div.setAttribute('class', 'gate-entry dark-bg');
+			darkBg = true;
+		}
+		if (gates.length - i <= 4) {
+			div.setAttribute('class', 'gate-entry' + darkBg ? 'dark-bg' : '');
+		} else {
+			div.setAttribute('class', 'gate-entry' + darkBg ? 'dark-bg' : '' + ' gate-entry-hidden');
 		}
 		let img = document.createElement('img');
 		img.setAttribute('draggable', 'false');
@@ -393,7 +394,7 @@ function init() {
 	showOldButton.addEventListener('click', function() {
 		let hiddenGates = document.querySelectorAll('.gate-entry-hidden');
 			for (let i=0; i < hiddenGates.length; i++) {
-				hiddenGates[i].setAttribute('class', 'gate-entry');
+				hiddenGates[i].classList.remove('gate-entry-hidden');
 			}
 		this.remove();
 	});
