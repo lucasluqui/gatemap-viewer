@@ -391,7 +391,7 @@ function init() {
 
 	showOldButton = document.getElementById("button-gate-show-old")
 	showOldButton.addEventListener('click', function() {
-		let hiddenGates = document.querySelectorAll('gate-entry-hidden');
+		let hiddenGates = document.querySelectorAll('.gate-entry-hidden');
 			for (let i=0; i < hiddenGates.length; i++) {
 				hiddenGates[i].setAttribute('class', 'gate-entry');
 			}
