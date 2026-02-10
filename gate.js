@@ -383,4 +383,9 @@ function init() {
 			document.body.appendChild(d1);
 		}
 	}
+
+	closeNoticeButton = document.getElementById("button-close-notice")
+	closeNoticeButton.addEventListener('click', function() {
+		this.parentElement.parentElement.remove();
+	});
 }

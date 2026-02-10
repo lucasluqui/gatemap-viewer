@@ -459,6 +459,26 @@ a:hover {
     padding-top: 9px;
     border-radius: 8px;
 }
+.sk-old-button {
+    width: 75px;
+    height: 25px;
+    background-color: #d2ddf3;
+    color: #0e1824;
+    font-weight: 800;
+    border-radius: 5px;
+    box-shadow: 0 0 0 2px #e7ffff, 
+    3px 3px 0 #80afb5,
+    0 3px 0 #80afb5,
+    3px 0 0 #80afb5;
+}
+.sk-old-button:hover {
+    background-color: #fff;
+    cursor: pointer;
+}
+.sk-old-button:active {
+    background-color: #6cafb9;
+    box-shadow: none;
+}
 a:hover {
     background-color: whitesmoke;
     text-decoration: underline;
