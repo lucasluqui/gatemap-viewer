@@ -126,7 +126,7 @@ div {
     opacity: 1;
 }
 .gate-entry-disabled:hover {
-    cursor: none;
+    cursor: auto;
 }
 .no-anim {
     opacity: 1;
