@@ -336,8 +336,8 @@ function init() {
 	params = Object.fromEntries(param_pairs);
 	
 	// show the timer bar if param is set
-	if (params['show_timer'])
-		document.getElementById('timer-container').style.display = '';
+	if (params['hide_timer'])
+		document.getElementById('timer-container').style.display = 'none';
 	
 	/* add disclaimer that this stuff isn't accurate... yet.
 	   someone please help me fix it
