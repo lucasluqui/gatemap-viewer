@@ -373,7 +373,7 @@ function init() {
 			p.innerText = 'While this version of the gatemap viewer features level rotation timings, the predicted timings might be inaccurate under certain conditions.';
 			d.appendChild(p);
 			p = document.createElement('p');
-			p.setAttribute('class', 'warning-button');
+			p.setAttribute('class', 'sk-old-button');
 			p.innerText = 'OK';
 			p.addEventListener('click', function() {
 				this.parentElement.parentElement.remove();

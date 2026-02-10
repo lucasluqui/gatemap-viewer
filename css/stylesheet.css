@@ -473,6 +473,7 @@ a:hover {
     border-radius: 8px;
 }
 .sk-old-button {
+    align-content: center;
     width: 75px;
     height: 25px;
     background-color: #d2ddf3;
