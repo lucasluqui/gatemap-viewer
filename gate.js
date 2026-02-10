@@ -27,7 +27,7 @@ function format_date(s) {
 function fetch_gate_data() {
 	let current_gate = gates[current_gate_index];
 	let fn = current_gate.join('_');
-	fetch('/gate/data/' + fn + '.txt')
+	fetch('gate/data/' + fn + '.txt')
 		.then(response => response.text())
 		.then(text => populate(text));
 }
@@ -45,7 +45,7 @@ function populate_gates(text) {
 	next_gate_time = moment.tz(format_date(latest_gate[0]) + ' 20:00', 'America/Chicago').add(1, 'days').valueOf();
 
 	let div = document.createElement('div');
-	div.setAttribute('class', 'gate-entry gate-entry-disabled');
+	div.setAttribute('class', 'gate-entry-disabled');
 	let img = document.createElement('img');
 	img.setAttribute('draggable', 'false');
 	img.setAttribute('src', 'image/icon/page/unknown.png');
@@ -209,6 +209,7 @@ function populate(text) {
 		.map(s => s - 33);  // quarter of one entry height (132)
 	let container = document.getElementById('section-jump');
 	for (let i=0; i<6; i++) {
+		container.children[i].classList.add('stratum-entry');
 		container.children[i].setAttribute('offset', section_heights[i]);
 		container.children[i].addEventListener('click', section_jump_func);
 		container.children[i].innerHTML = '';
@@ -328,7 +329,7 @@ function init() {
 		tick.setAttribute('src', 'image/hashmarks.png');
 		tick_container.appendChild(tick);
 	}
-	fetch('/gate/gate_list.txt')
+	fetch('gate/gate_list.txt')
 		.then(response => response.text())
 		.then(text => populate_gates(text));
 	window.addEventListener('scroll', section_track_func);
