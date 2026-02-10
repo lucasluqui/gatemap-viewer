@@ -114,6 +114,7 @@ div {
 }
 .gate-entry:hover {
     background-image: linear-gradient(to right, var(--color-body-bg), var(--color-hover-bg), var(--color-body-bg));
+    cursor: pointer;
 }
 .gate-entry img {
     width: 55px;
@@ -123,6 +124,9 @@ div {
 }
 .gate-entry:hover img, img.animate:hover {
     opacity: 1;
+}
+.gate-entry-disabled:hover {
+    cursor: none;
 }
 .no-anim {
     opacity: 1;
@@ -198,6 +202,7 @@ div {
 .icon-wrapper:hover > .hover-wrapper {
     display: flex;
     flex-direction: column;
+    cursor: pointer;
 }
 .icon-wrapper:hover > img {
     z-index: 2;
@@ -482,6 +487,9 @@ a:hover {
 .sk-old-button:active {
     background-color: #6cafb9;
     box-shadow: none;
+}
+.clickable-arrow:hover {
+    cursor: pointer;
 }
 a:hover {
     background-color: whitesmoke;

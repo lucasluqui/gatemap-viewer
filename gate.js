@@ -45,7 +45,7 @@ function populate_gates(text) {
 	next_gate_time = moment.tz(format_date(latest_gate[0]) + ' 20:00', 'America/Chicago').add(1, 'days').valueOf();
 
 	let div = document.createElement('div');
-	div.setAttribute('class', 'gate-entry');
+	div.setAttribute('class', 'gate-entry gate-entry-disabled');
 	let img = document.createElement('img');
 	img.setAttribute('draggable', 'false');
 	img.setAttribute('src', 'image/icon/page/unknown.png');
@@ -53,7 +53,7 @@ function populate_gates(text) {
 	name_div.setAttribute('class', 'name-date');
 	let p = document.createElement('p');
 	p.setAttribute('class', 'text-title');
-	p.innerHTML = '---';
+	p.innerHTML = 'Next Gate';
 	name_div.appendChild(p);
 	p = document.createElement('p');
 	p.setAttribute('class', 'text-title no-bold');
@@ -127,7 +127,7 @@ function populate(text) {
 		rot_data = null;
 		document.getElementById('rotation-timer').innerText = '\u2012\u2012:\u2012\u2012 to';
 		document.getElementById('timer-img').setAttribute('src', 'image/icon/page/unknown.png');
-		document.getElementById('next-level-name').innerHTML = '<p>Next Gate</p>';
+		document.getElementById('next-level-name').innerHTML = '<p>---</p>';
 		draw_lines(true);
 	}
 	
