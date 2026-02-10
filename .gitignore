@@ -1,0 +1,6 @@
+# gate data files
+gate/
+gate/*
+gate/gate_list.txt
+gate/data/
+gate/data/*
