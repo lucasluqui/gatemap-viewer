@@ -278,6 +278,7 @@ div {
 }
 .section-jump a:hover {
     background-color: var(--color-highlight-bg);
+    opacity: 65%;
     cursor: pointer;
 }
 a {
