@@ -68,17 +68,14 @@ function populate_gates(text) {
 		let e = gates[i];
 		let div = document.createElement('div');
 		let icon = e.slice(1).join('_');
-		let darkBg = false;
 		div.setAttribute('class', 'gate-entry');
 		div.setAttribute('data-value', i.toString());
 		div.addEventListener('click', gate_jump);
 		if ((gates.length - i) % 2 !== 0) {
-			darkBg = true;
+			div.classList.add('dark-bg')
 		}
-		if (gates.length - i <= 4) {
-			div.setAttribute('class', 'gate-entry' + darkBg ? 'dark-bg' : '');
-		} else {
-			div.setAttribute('class', 'gate-entry' + darkBg ? 'dark-bg' : '' + ' gate-entry-hidden');
+		if (gates.length - i > 4) {
+			div.classList.add('gate-entry-hidden');
 		}
 		let img = document.createElement('img');
 		img.setAttribute('draggable', 'false');
