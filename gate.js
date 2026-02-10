@@ -127,7 +127,7 @@ function populate(text) {
 		rot_data = null;
 		document.getElementById('rotation-timer').innerText = '\u2012\u2012:\u2012\u2012 to';
 		document.getElementById('timer-img').setAttribute('src', 'image/icon/page/unknown.png');
-		document.getElementById('next-level-name').innerHTML = '<p>---</p>';
+		document.getElementById('next-level-name').innerHTML = '<p>Next Gate</p>';
 		draw_lines(true);
 	}
 	
