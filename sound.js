@@ -15,10 +15,15 @@ document.addEventListener("click", (event) => {
         play_sound('ui_dropdown_select');
         return;
     }
+
+    if (target.closest('.clickable-arrow')) {
+        play_sound('ui_dropdown_select');
+        return;
+    }
 });
 
 function play_sound(name) {
 	let sound = new Audio('sound/' + name + '.ogg'); 
-    sound.volume = 0.33;
+    sound.volume = 0.25;
 	sound.play();
 }
