@@ -68,7 +68,12 @@ function populate_gates(text) {
 		let e = gates[i];
 		let div = document.createElement('div');
 		let icon = e.slice(1).join('_');
-		div.setAttribute('class', 'gate-entry');
+		if (i <= 4) {
+			div.setAttribute('class', 'gate-entry');
+		} else {
+			// hide old gates
+			div.setAttribute('class', 'gate-entry gate-entry-hidden');
+		}
 		div.setAttribute('data-value', i.toString());
 		div.addEventListener('click', gate_jump);
 		if ((gates.length - i) % 2 !== 0) {
@@ -383,6 +388,15 @@ function init() {
 			document.body.appendChild(d1);
 		}
 	}
+
+	showOldButton = document.getElementById("button-gate-show-old")
+	showOldButton.addEventListener('click', function() {
+		let hiddenGates = document.querySelectorAll('gate-entry-hidden');
+			for (let i=0; i < hiddenGates.length; i++) {
+				hiddenGates[i].setAttribute('class', 'gate-entry');
+			}
+		this.remove();
+	});
 
 	closeNoticeButton = document.getElementById("button-close-notice")
 	closeNoticeButton.addEventListener('click', function() {

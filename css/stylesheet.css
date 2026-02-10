@@ -474,7 +474,11 @@ a:hover {
 }
 .sk-old-button {
     align-content: center;
-    width: 75px;
+    width: fit-content;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 15px;
+    padding-left: 15px;
     height: 25px;
     background-color: #d2ddf3;
     color: #0e1824;
@@ -495,6 +499,14 @@ a:hover {
 }
 .clickable-arrow:hover {
     cursor: pointer;
+}
+.gate-show-old-wrapper {
+    margin-top: 50px;
+    width: 100%;
+    align-content: center;
+}
+.gate-entry-hidden {
+    display: none;
 }
 a:hover {
     background-color: whitesmoke;
