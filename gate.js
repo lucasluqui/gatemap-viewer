@@ -222,7 +222,7 @@ function populate(text) {
 	}
 	
 	// actually draw the lines now
-	if (rot_data != null && params['show_timer']) {
+	if (rot_data != null && !params['hide_timer']) {
 		let lobby_node = document.querySelector('[data-depth="0"][data-levelnum="0"]').parentElement;
 		lobby_node.classList.add('selected-level');
 		get_next_level();
@@ -342,7 +342,7 @@ function init() {
 	/* add disclaimer that this stuff isn't accurate... yet.
 	   someone please help me fix it
 	   run this only when param is set */
-	if (params['show_timer']) {
+	if (!params['hide_timer']) {
 		// get cookie
 		let cookie_array = document.cookie.split(';');
 		cookie_array = cookie_array.map(s => s.trim());

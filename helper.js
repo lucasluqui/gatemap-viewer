@@ -590,7 +590,7 @@ function to_canonical(text_array) {
 }
 
 function icon_click_func() {
-	if (!params['show_timer'])
+	if (params['hide_timer'])
 		return;
 	
 	if (selected_levels[current_depth] == parseInt(this.getAttribute('data-levelnum')) && current_depth == parseInt(this.getAttribute('data-depth')))
@@ -774,7 +774,7 @@ function draw_lines(only_clear_lines=false) {
 	
 	// Allow function to clear lines only and return,
 	// for gates without rotation data.
-	if (only_clear_lines || !params['show_timer'])
+	if (only_clear_lines || params['hide_timer'])
 		return;
 	
 	// Segments for Haven
