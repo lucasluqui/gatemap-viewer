@@ -269,6 +269,10 @@ div {
     display: inline-flex;
     flex-direction: column;
 }
+.section-jump a:hover {
+    background-color: var(--color-highlight-bg);
+    cursor: pointer;
+}
 a {
     color: unset;
     text-decoration: none;
