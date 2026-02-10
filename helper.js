@@ -37,7 +37,7 @@ function wrap_icon(descriptor) {
 		case 'haven':
 			title = 'Haven';
 			subtitle = '';
-			blurb = 'A peaceful town that is home to the Strangers. These salvagers offer the Spiral Knights sanctuary in return for the treasures that they acquire while investigating the Clockworks. Haven is also heavily populated with snipes, bulbous little birds with a curious means of locomotion.';
+			blurb = 'A peaceful town that is home to the Strangers. These salvagers offer the Spiral Knights sanctuary in return for the treasures that they acquire while investigating the Clockworks.';
 			break;
 		case 'lobby':
 			title = 'The Clockworks';

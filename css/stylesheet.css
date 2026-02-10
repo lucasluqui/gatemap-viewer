@@ -55,7 +55,6 @@ div {
     border: 0 solid var(--color-white);
     border-left-width: 5px;
     user-select: none;
-    margin-top: 19px;
 }
 .sidebar::-webkit-scrollbar {
     width: 10px;
@@ -155,7 +154,6 @@ div {
 .middle {
     width: 558px;
     position: relative;
-    margin-top: 19px;
 }
 .bgcontainer {
     width: 100%;
@@ -450,13 +448,15 @@ a:hover {
 .warning-button:hover {
     color: var(--color-highlight-bg)
 }
-.fork-notice {
-    background-color: whitesmoke;
-    font-size: medium;
+.notice-wrapper {
     position: fixed;
-    top: 0;
-    z-index: 9999;
-    width: 100%;
+    background-color: var(--color-body-bg-trans);
+    width: 210px;
+    min-height: 80px;
+    right: 43px;
+    bottom: 43px;
+    padding-top: 9px;
+    border-radius: 8px;
 }
 a:hover {
     background-color: whitesmoke;
