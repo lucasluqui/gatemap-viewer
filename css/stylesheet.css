@@ -188,6 +188,9 @@ div {
     position: relative;
     text-align: left;
 }
+.icon-wrapper:hover {
+    cursor: pointer;
+}
 .hover-wrapper {
     display: none;
     position: absolute;
@@ -202,7 +205,6 @@ div {
 .icon-wrapper:hover > .hover-wrapper {
     display: flex;
     flex-direction: column;
-    cursor: pointer;
 }
 .icon-wrapper:hover > img {
     z-index: 2;
