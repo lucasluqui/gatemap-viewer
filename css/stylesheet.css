@@ -394,11 +394,12 @@ a:hover {
     font-size: 13pt;
 }
 #next-level-name>p:first-child {
+    font-size: 11pt;
     font-weight: bold;
-    font-style: oblique;
 }
 #next-level-name>p:nth-child(2) {
-    font-size: 80%;
+    font-size: 73%;
+    font-style: oblique;
 }
 .selected-level::after {
     position: absolute;
