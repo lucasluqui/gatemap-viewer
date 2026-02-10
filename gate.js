@@ -89,7 +89,7 @@ function populate_gates(text) {
 		name_div.appendChild(p);
 		div.appendChild(img);
 		div.appendChild(name_div);
-		document.getElementById('entry-wrapper').appendChild(div);
+		document.getElementById('gate-entry-wrapper').appendChild(div);
 	}
 	add_style();
 	timer_func();
