@@ -379,6 +379,7 @@ a:hover {
     width: 130px;
     margin-left: 10px;
     user-select: none;
+    font-size: 13pt;
 }
 #next-level-name>p:first-child {
     font-weight: bold;
@@ -454,7 +455,7 @@ a:hover {
     width: 210px;
     min-height: 80px;
     right: 43px;
-    bottom: 43px;
+    bottom: 100px;
     padding-top: 9px;
     border-radius: 8px;
 }
