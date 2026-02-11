@@ -377,7 +377,7 @@ function init() {
 			p.setAttribute('class', 'warning-body');
 			p.innerText = 'While this version of the gatemap viewer features level rotation timings, the predicted timings might be inaccurate under certain conditions.';
 			d.appendChild(p);
-			p = document.createElement('p');
+			p = document.createElement('button');
 			p.setAttribute('class', 'sk-old-button');
 			p.innerText = 'OK';
 			p.addEventListener('click', function() {
@@ -397,12 +397,12 @@ function init() {
 			for (let i=0; i < oldGates.length; i++) {
 				oldGates[i].classList.remove('gate-entry-hidden');
 			}	
-			this.innerText = "Hide Old Gates"
+			this.innerText = "Hide Older Gates"
 		} else {
 			for (let i=0; i < oldGates.length; i++) {
 				oldGates[i].classList.add('gate-entry-hidden');
 			}
-			this.innerText = "Show Old Gates"
+			this.innerText = "Show Older Gates"
 		}
 		//this.remove();
 	});
