@@ -112,6 +112,9 @@ div {
     margin: 0 20px;
     padding: 7px 0;
 }
+.gate-entry-disabled {
+    opacity: 0.5;
+}
 .gate-entry:hover {
     background-image: linear-gradient(to right, var(--color-body-bg), var(--color-hover-bg), var(--color-body-bg));
     cursor: pointer;
