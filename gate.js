@@ -42,7 +42,7 @@ function populate_gates(text) {
 	let latest_gate = gates[current_gate_index];
 	// only adding one day because it's actually still yesterday compared to the date written
 	// and i can't be arsed to change the whole folder again
-	next_gate_time = moment.tz(format_date(latest_gate[0]) + ' 20:00', 'America/Chicago').add(1, 'days').valueOf();
+	next_gate_time = moment.tz(format_date(latest_gate[0]) + ' 22:00', 'America/Chicago').add(1, 'days').valueOf();
 
 	let div = document.createElement('div');
 	div.setAttribute('class', 'gate-entry-disabled');
