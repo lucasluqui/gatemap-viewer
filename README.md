@@ -10,3 +10,4 @@ The following files were taken from Spiral Knights and is copyright © Grey Have
 * `image/spacer_left.png`
 * `image/spacer_random.png`
 * `image/spacer_right.png`
+* All sounds in `sound/`
