@@ -269,13 +269,13 @@ function timer_func() {
 	let secs = Math.floor(dist / 1000) % 60;
 	
 	let time_str = 'in ';
-	if (days > 0) time_str += days + ':';
+	if (days > 0) time_str += days + 'd ';
 	if (days > 0 && hrs < 10) time_str += '0';
-	time_str += hrs + ':';
+	time_str += hrs + 'h ';
 	if (mins < 10) time_str += '0';
-	time_str += mins + ':';
+	time_str += mins + 'm ';
 	if (secs < 10) time_str += '0';
-	time_str += secs;
+	time_str += secs + 's ';
 	
 	document.getElementById('nextdate').innerHTML = time_str;
 	
