@@ -281,6 +281,7 @@ function timer_func() {
 	
 	if (dist <= 0) {
 		clearInterval(timer);
+		document.getElementById('nextdate').innerHTML = 'Pending upload - please be patient';
 	}
 }
 
