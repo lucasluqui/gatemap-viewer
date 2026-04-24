@@ -21,14 +21,14 @@ function init() {
     const target = event.target;
 
     if (target.tagName === 'BUTTON') {
-      playSound('ui_confirm');
+      play_sound('ui_confirm');
       return;
     }
 
     if (target.closest('.stratum-entry') ||
       target.closest('.gate-entry') ||
       target.closest('.clickable-arrow')) {
-	  playSound('ui_dropdown_select');
+	  play_sound('ui_dropdown_select');
       return;
     }
   });
