@@ -611,6 +611,16 @@ function icon_click_func() {
 	draw_lines();
 }
 
+// returns the start time the server MIGHT be using for a rotating wheel.
+// the start in the gate data is assumed to go stale after the next gate rotation.
+// that only matters for wheels whose period doesn't evenly divide a day, so assume today's midnight for those.
+function get_wheel_start(wheel_data, time) {
+	let period = Math.round(TWOPI / Math.abs(wheel_data.velocity));
+	if (86400 % period === 0)
+		return wheel_data.start;
+	return time - time % (24 * 60 * 60 * 1000);
+}
+
 function get_next_level() {
 	if (rotation_timer != null) {
 		clearTimeout(rotation_timer);
@@ -642,7 +652,7 @@ function get_next_level() {
 			let cur_speed = rot_data[cdepth].data == null ? 0 : rot_data[cdepth].data.velocity;
 			let dist_travel = 0;
 			if (cur_speed != 0) {
-				dist_travel = (cur_time - rot_data[cdepth].data.start) % Math.floor(TWOPI * 1000 / Math.abs(cur_speed)) * cur_speed / 1000;
+				dist_travel = (cur_time - get_wheel_start(rot_data[cdepth].data, cur_time)) % Math.floor(TWOPI * 1000 / Math.abs(cur_speed)) * cur_speed / 1000;
 			}
 			// dist_travel %= TWOPI;
 			// if (dist_travel < 0) dist_travel += TWOPI;
@@ -667,7 +677,7 @@ function get_next_level() {
 			let next_speed = rot_data[cdepth+1].data.velocity;
 			let next_dist_travel = 0;
 			if (next_speed != 0) {
-				next_dist_travel = (cur_time - rot_data[cdepth+1].data.start) % Math.floor(TWOPI * 1000 / Math.abs(next_speed)) * next_speed / 1000;
+				next_dist_travel = (cur_time - get_wheel_start(rot_data[cdepth+1].data, cur_time)) % Math.floor(TWOPI * 1000 / Math.abs(next_speed)) * next_speed / 1000;
 			}
 			// next_dist_travel %= TWOPI;
 			// if (next_dist_travel < 0) next_dist_travel += TWOPI;
