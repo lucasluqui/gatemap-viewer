@@ -614,14 +614,18 @@ function icon_click_func() {
 // returns the start time the server MIGHT be using for a rotating wheel.
 // the start in the gate data is assumed to go stale after the next gate rotation.
 // that only matters for wheels whose period doesn't evenly divide a day, so for those assume
-// midnight (UTC) of the current day in Pacific date time.
-// caveat: this might be off for a couple hours some days, needs to be investigated.
+// the server "resets" it every day at 8 PM Pacific (when gates rotate) to midnight (UTC) of
+// the current UTC day, which by then is already the next day.
+// caveat: the "daily reset" is inferred from what is seen in game, needs to be investigated.
 function get_wheel_start(wheel_data, time) {
 	let period = Math.round(TWOPI / Math.abs(wheel_data.velocity));
 	if (86400 % period === 0)
 		return wheel_data.start;
-	let date = moment.tz(time, 'America/Los_Angeles').format('YYYY-MM-DD');
-	return Date.parse(date + 'T00:00:00Z');
+	let t = moment.tz(time, 'America/Los_Angeles');
+	let reset = t.clone().hour(20).startOf('hour');
+	if (reset.isAfter(t))
+		reset.subtract(1, 'day');
+	return reset.valueOf() - reset.valueOf() % (24 * 60 * 60 * 1000);
 }
 
 function get_next_level() {
