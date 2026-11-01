@@ -4,7 +4,7 @@ var TWOPI = 6.2831855;
 // how to guess when the server resets the start time of odd-period wheels (see get_wheel_start)
 // true: every day at 8 PM Pacific
 // false: at the latest gate rotation, then every day at midnight Pacific
-var DAILY_WHEEL_RESET_AT_ROTATION_TIME = true;
+var DAILY_WHEEL_RESET_AT_ROTATION_TIME = false;
 
 // returns a div DOMElement to be appended to each depth
 // descriptor should be an array of strings
