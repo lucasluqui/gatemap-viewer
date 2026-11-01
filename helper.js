@@ -1,10 +1,12 @@
 var specials = ['aurora', 'concrete', 'darkcity', 'jigsaw', 'starlight', 'scarlet', 'pv', 'gww', 'rjp', 'imf', 'fsc', 'terminal'];
 var keywords = ['ai', 'dc_2d', 'dc_3d', 'cj_bb', 'cj_tt', 'jv_ax', 'jv_jt', 'jv_pp', 'sf_sc', 'sf_ch', 'sf_2d', 'sc_mm', 'sc_ss', 's_gww', 's_rjp', 's_imf', 's_fsc'];
 var TWOPI = 6.2831855;
+
 // how to guess when the server resets the start time of odd-period wheels (see get_wheel_start)
-// true: every day at 8 PM Pacific
-// false: at the latest gate rotation, then every day at midnight Pacific
-var DAILY_WHEEL_RESET_AT_ROTATION_TIME = false;
+// 'rotation_time': every day at 8 PM Pacific
+// 'rotation_then_midnight': at the latest gate rotation, then every day at midnight Pacific
+// 'rotation_only': only at the latest gate rotation
+var WHEEL_RESET_MODE = 'rotation_only';
 
 // returns a div DOMElement to be appended to each depth
 // descriptor should be an array of strings
@@ -619,9 +621,10 @@ function icon_click_func() {
 // the start in the gate data is assumed to go stale after the next gate rotation.
 // that only matters for wheels whose period doesn't evenly divide a day, so for those assume
 // the server "resets" it to midnight (UTC) of the current UTC day, at one of these times
-// (picked with DAILY_WHEEL_RESET_AT_ROTATION_TIME):
+// (picked with WHEEL_RESET_MODE):
 // - every day at 8 PM Pacific (when gates rotate), when the UTC day is already the next day.
 // - at the latest gate rotation, and then every day at midnight Pacific.
+// - only at the latest gate rotation.
 // caveat: the "daily reset" is inferred from what is seen in game, needs to be investigated.
 function get_wheel_start(wheel_data, time) {
 	let period = Math.round(TWOPI / Math.abs(wheel_data.velocity));
@@ -630,7 +633,7 @@ function get_wheel_start(wheel_data, time) {
 	let day = 24 * 60 * 60 * 1000;
 	let t = moment.tz(time, 'America/Los_Angeles');
 	let reset;
-	if (DAILY_WHEEL_RESET_AT_ROTATION_TIME) {
+	if (WHEEL_RESET_MODE === 'rotation_time') {
 		reset = t.clone().hour(20).startOf('hour');
 		if (reset.isAfter(t))
 			reset.subtract(1, 'day');
@@ -640,7 +643,9 @@ function get_wheel_start(wheel_data, time) {
 		let last_rotation = next_gate_time - 2 * day;
 		while (last_rotation + 2 * day <= time)
 			last_rotation += 2 * day;
-		reset = Math.max(last_rotation, t.clone().startOf('day').valueOf());
+		reset = last_rotation;
+		if (WHEEL_RESET_MODE === 'rotation_then_midnight')
+			reset = Math.max(reset, t.clone().startOf('day').valueOf());
 	}
 	return reset - reset % day;
 }
